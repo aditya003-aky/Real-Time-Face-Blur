@@ -12,7 +12,8 @@ while True:
 
         img[y:y + h, x:x + w] = gaussian_blurr
 
-    if len(faces) == 0:
+    if faces is None or len(faces) == 0:
+
         cv2.putText(img, 'No Face Found!', (20, 50), cv2.FONT_HERSHEY_COMPLEX, 1, (0, 0, 255))
     cv2.imshow('Face Blur', img)
     if cv2.waitKey(1) & 0xff == ord('q'):
